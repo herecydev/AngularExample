@@ -8,7 +8,7 @@ var uglifier = require('gulp-uglify');
 
 gulp.task('compress', function () {
     return gulp.src('Scripts/**/*.js')
-      .pipe(uglify())
+      .pipe(uglifier())
       .pipe(gulp.dest('wwwroot/app.js'));
 });
 
