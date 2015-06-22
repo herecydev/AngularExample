@@ -11,3 +11,9 @@ gulp.task('compress', function () {
       .pipe(uglify())
       .pipe(gulp.dest('wwwroot/app.js'));
 });
+
+gulp.task('watch', function () {
+    gulp.watch('Scripts/**/*.js', ['compress'])
+});
+
+gulp.task('default', ['watch', 'compress']);
