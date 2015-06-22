@@ -1,7 +1,8 @@
-﻿/// <binding ProjectOpened='default, watch' />
+﻿/// <binding ProjectOpened='default' />
 var gulp = require('gulp');
 var uglify = require('gulp-uglify');
 var concat = require('gulp-concat');
+var runSequence = require('run-sequence');
 var del = require('del');
 var scripts = 'Scripts/**/*.js';
 
@@ -16,8 +17,12 @@ gulp.task('clean', function () {
 	del(['wwwroot/**.*']);
 })
 
+gulp.task('cleanAndCompress', function () {
+    runSequence('clean', 'compress');
+})
+
 gulp.task('watch', function () {
-	gulp.watch(scripts, ['compress', 'clean']);
+    gulp.watch(scripts, ['cleanAndCompress']);
 });
 
-gulp.task('default', ['compress', 'clean']);
+gulp.task('default', ['watch']);
