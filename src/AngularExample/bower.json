@@ -1,0 +1,7 @@
+{
+	"name": "AngularExample",
+	"private": true,
+	"dependencies": {
+		"angular": "1.4.1"
+	}
+}
