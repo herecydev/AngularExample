@@ -45,15 +45,11 @@ gulp.task('copyViews', function () {
 });
 
 gulp.task('clean', function () {
-	del(['wwwroot/**/*']);
+	return del(['wwwroot/**/*']);
 });
-
-gulp.task('allOfTheThings', function () {
-	runSequence('clean', ['copy', 'compress', 'copyIndex', 'copyViews', 'copyCss']);
-})
 
 gulp.task('watch', function () {
 	gulp.watch('Scripts/**/*.js', ['allOfTheThings']);
 });
 
-gulp.task('default', ['watch']);
+gulp.task('default', ['copy', 'compress', 'copyIndex', 'copyViews', 'copyCss']);
