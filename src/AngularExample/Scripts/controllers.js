@@ -6,3 +6,13 @@ moviesControllers.controller('MoviesListController', ['$scope', 'MovieService',
 	function ($scope, MovieService) {
 		$scope.movies = MovieService.query();
 	}]);
+
+moviesControllers.controller('MoviesAddController', ['$scope', '$location', 'MovieService',
+	function ($scope, $location, MovieService) {
+		$scope.movie = new Movie();
+		$scope.add = function () {
+			$scope.movie.$save(function () {
+				$location.path('/');
+			});
+		};
+	}]);

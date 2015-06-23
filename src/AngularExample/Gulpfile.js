@@ -49,7 +49,7 @@ gulp.task('clean', function () {
 });
 
 gulp.task('watch', function () {
-	gulp.watch('Scripts/**/*.js', ['allOfTheThings']);
+	gulp.watch('Scripts/**/*.js', ['default']);
 });
 
 gulp.task('default', ['copy', 'compress', 'copyIndex', 'copyViews', 'copyCss']);
