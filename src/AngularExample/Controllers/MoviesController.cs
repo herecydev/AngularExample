@@ -4,7 +4,7 @@ using AngularExample.Models;
 
 namespace AngularExample.Controllers
 {
-	[Route("[controller]")]
+	[Route("api/[controller]")]
     public class MoviesController : Controller
     {
         [HttpGet]
