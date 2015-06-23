@@ -2,7 +2,7 @@
 
 var moviesApp = angular.module('moviesApp', ['ngRoute', 'moviesControllers']);
 
-moviesApp.config(['$routeProvider', function ($routeProvider) {
+moviesApp.config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {
 	$routeProvider.when('/', {
 		templateUrl: '/Views/list.html',
 		controller: 'MoviesListController'
@@ -19,4 +19,9 @@ moviesApp.config(['$routeProvider', function ($routeProvider) {
         templateUrl: '/Views/delete.html',
         controller: 'MoviesDeleteController'
     });
+
+	$locationProvider.html5Mode({
+		enabled: true,
+		requireBase: false
+	});
 }]);
