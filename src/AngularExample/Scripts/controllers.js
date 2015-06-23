@@ -1,6 +1,6 @@
 ﻿'use strict';
 
-var moviesControllers = angular.module('moviesApp');
+var moviesControllers = angular.module('moviesControllers', ['moviesService']);
 
 moviesControllers.controller('MoviesListController', ['$scope', 'MovieService',
 	function ($scope, MovieService) {

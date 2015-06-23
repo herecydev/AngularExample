@@ -1,6 +1,6 @@
 ﻿'use strict';
 
-var moviesApp = angular.module('moviesApp', ['ngRoute', 'moviesService']);
+var moviesApp = angular.module('moviesApp', ['ngRoute', 'moviesControllers']);
 
 moviesApp.config(['$routeProvider', function ($routeProvider) {
 	$routeProvider.when('/', {
